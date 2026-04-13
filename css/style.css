@@ -1,0 +1,301 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Dancing+Script:wght@700&display=swap');
+
+/* Body */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff6a88, #ff99ac, #ffc3a0);
+    background-size: 300% 300%;
+    animation: gradientMove 10s ease infinite;
+    color: white;
+    
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Center layout */
+.main-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glass card */
+.card {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 45px 30px;
+    border-radius: 25px;
+    backdrop-filter: blur(20px);
+    max-width: 520px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+    animation: fadeIn 2s ease;
+}
+
+/* Card entry animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heading */
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    animation: glow 2s infinite alternate;
+}
+
+/* Glow */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ff4da6;
+    }
+    to {
+        text-shadow: 0 0 25px #fff, 0 0 40px #ff1a75;
+    }
+}
+
+/* Shayari */
+.shayari {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    margin-top: 20px;
+    color: #fff;
+    animation: fadeText 3s ease;
+}
+
+@keyframes fadeText {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Button */
+button {
+    padding: 14px 35px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    background: linear-gradient(45deg, #ff4d6d, #ff85a2);
+    color: white;
+    box-shadow: 0 5px 20px rgba(255, 77, 109, 0.6);
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+/* Button pulse */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+button:hover {
+    transform: scale(1.15);
+    box-shadow: 0 10px 30px rgba(255, 77, 109, 0.9);
+}
+
+/* Floating hearts (multiple layers) */
+body::before {
+    content: "💖 💕 💘 💝 💞 💓 💗";
+    position: fixed;
+    bottom: -60px;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    animation: floatHearts 12s linear infinite;
+    opacity: 0.6;
+}
+
+body::after {
+    content: "❤️ 💖 💘 💕 💝";
+    position: fixed;
+    bottom: -100px;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    animation: floatHeartsSlow 18s linear infinite;
+    opacity: 0.4;
+}
+
+/* Heart animations */
+@keyframes floatHearts {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% { opacity: 1; }
+    100% {
+        transform: translateY(-900px);
+        opacity: 0;
+    }
+}
+
+@keyframes floatHeartsSlow {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% { opacity: 1; }
+    100% {
+        transform: translateY(-1000px);
+        opacity: 0;
+    }
+}
+
+/* Sparkle effect */
+.card::after {
+    content: "✨ ✨ ✨";
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    font-size: 18px;
+    animation: sparkle 3s infinite;
+}
+
+@keyframes sparkle {
+    0% { opacity: 0; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(-10px); }
+    100% { opacity: 0; transform: translateY(0); }
+}
+
+/* Multiple floating hearts layers */
+.hearts {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 20px;
+    animation: rise linear infinite;
+    opacity: 0.7;
+}
+
+/* Different speeds */
+.heart:nth-child(1) { left: 10%; animation-duration: 8s; font-size: 20px; }
+.heart:nth-child(2) { left: 20%; animation-duration: 12s; font-size: 25px; }
+.heart:nth-child(3) { left: 30%; animation-duration: 10s; font-size: 18px; }
+.heart:nth-child(4) { left: 40%; animation-duration: 14s; font-size: 28px; }
+.heart:nth-child(5) { left: 50%; animation-duration: 9s; font-size: 22px; }
+.heart:nth-child(6) { left: 60%; animation-duration: 13s; font-size: 26px; }
+.heart:nth-child(7) { left: 70%; animation-duration: 11s; font-size: 20px; }
+.heart:nth-child(8) { left: 80%; animation-duration: 15s; font-size: 30px; }
+.heart:nth-child(9) { left: 90%; animation-duration: 10s; font-size: 24px; }
+
+/* Animation */
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.3);
+        opacity: 0;
+    }
+}
+
+
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ✅ FIXED GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* ✅ IMAGE STYLING */
+.gallery img {
+    width: 100%;
+    height: 300px; /* small size */
+    object-fit: cover; /* crop properly */
+    border-radius: 12px;
+    border: 3px solid #ff6f91;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+/* Hover effect */
+.gallery img:hover {
+    transform: scale(1.08);
+}
+
+/* Button styling */
+button {
+    margin-top: 25px;
+    padding: 10px 20px;
+    border: none;
+    background: #ff6f91;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff3e6c;
+}
+
+.messages {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.messages p {
+    background: black;
+    padding: 10px;
+    margin: 10px auto;
+    width: 60%;
+    border-radius: 10px;
+    border-left: 5px solid #ff6f91;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    font-size: 16px;
+}
+
+.messages p {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
